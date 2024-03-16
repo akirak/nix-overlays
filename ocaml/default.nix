@@ -827,9 +827,11 @@ with oself;
   });
 
   git = osuper.git.overrideAttrs (_: {
-    src = builtins.fetchurl {
-      url = https://github.com/mirage/ocaml-git/releases/download/3.15.0/git-3.15.0.tbz;
-      sha256 = "1lamw2a412y5lccg4r1bnli2aa8i9x0iyv4nx73z55bwi2gwlv72";
+    src = fetchFromGitHub {
+      owner = "akirak";
+      repo = "ocaml-git";
+      rev = "ce4bd3edb6233f2bbc7e7c8272863dfcd4706515";
+      sha256 = "sha256-dh1t6Zf+U4guMhew5dCaV9YOn7g5BizuG5WYmCcuo28=";
     };
   });
 
