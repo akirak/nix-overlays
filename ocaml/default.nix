@@ -929,6 +929,29 @@ with oself;
       sha256 = "182immvlgvcj1bl6nx816p2k5g6ssz4hc9n3b1nmpysz3fz3l1wf";
     };
   });
+  irmin-cli = disableTests (buildDunePackage {
+    pname = "irmin-cli";
+    inherit (irmin) src version;
+    propagatedBuildInputs = [
+      astring
+      irmin
+      irmin-tezos
+      irmin-pack
+      irmin-git
+      irmin-fs
+      irmin-graphql
+      irmin-server
+      websocket-lwt-unix
+      conduit-lwt-unix
+      irmin-watcher
+      cmdliner
+      git-unix
+      cohttp-lwt-unix
+      yaml
+    ];
+    checkInputs = [ alcotest-lwt ];
+    doCheck = true;
+  });
   irmin-server = buildDunePackage {
     pname = "irmin-server";
     inherit (irmin) src version;
