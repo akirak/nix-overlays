@@ -1781,6 +1781,15 @@ with oself;
     propagatedBuildInputs = o.propagatedBuildInputs ++ [ stdio ];
   });
 
+  paf = disableTests (osuper.paf.overrideAttrs (_: {
+    src = fetchFromGitHub {
+      owner = "akirak";
+      repo = "paf-le-chien";
+      rev = "b8da48f51e5f621ba2cfeb00b336b3e01f53668c";
+      hash = "sha256-PZcNK++FFkYK0/6hokSUWNM1YFanNCAYI0lKzzrSq4I=";
+    };
+  }));
+
   # These require crowbar which is still not compatible with newer cmdliner.
   pecu = disableTests osuper.pecu;
 
