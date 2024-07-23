@@ -2214,6 +2214,8 @@ with oself;
     propagatedBuildInputs = [ xmlm uri ptime ];
   };
 
+  systemd = callPackage ./systemd {  };
+
   taglib = osuper.taglib.overrideAttrs (o: {
     NIX_CFLAGS_COMPILE = lib.optionalString stdenv.isDarwin "-I${lib.getDev libcxx}/include/c++/v1";
   });
