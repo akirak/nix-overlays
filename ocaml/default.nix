@@ -977,6 +977,17 @@ with oself;
 
   hyper = callPackage ./hyper { };
 
+  inotify = osuper.inotify.overrideAttrs (_: {
+    src = fetchFromGitHub {
+      owner = "whitequark";
+      repo = "ocaml-inotify";
+      rev = "b9cadad68ef3f4965853ea693171adf1d18c0599";
+      hash = "sha256-430WkQd0msA96frEG23TRIwLAdCSLl9yGq49SHbTd2o=";
+    };
+  });
+
+  inotify-eio = callPackage ./inotify/eio.nix { };
+
   iomux = osuper.iomux.overrideAttrs (_: {
     hardeningDisable = [ "strictoverflow" ];
   });
