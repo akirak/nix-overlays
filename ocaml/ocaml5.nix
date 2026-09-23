@@ -12,6 +12,10 @@ with oself;
 {
   archi-eio = callPackage ./archi/eio.nix { };
 
+  capnp-rpc = callPackage ./capnp-rpc { };
+  capnp-rpc-net = callPackage ./capnp-rpc/net.nix { };
+  capnp-rpc-unix = callPackage ./capnp-rpc/unix.nix { };
+
   caqti-eio = buildDunePackage {
     inherit (caqti) version src;
     pname = "caqti-eio";
