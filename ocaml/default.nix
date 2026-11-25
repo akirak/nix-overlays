@@ -1858,7 +1858,7 @@ with oself;
         version = "6.1.3";
         src = fetchurl {
           url = "https://github.com/ocsigen/lwt/archive/refs/tags/6.1.3.tar.gz";
-          hash = "sha256-5Vj9rExlySXWHWuWcIYpytPynmp2/vgUwDHCI7o5zQk=";
+          hash = "sha256-a8MR1+iqahYkPsbHf5xgofF5ULx1Ty6j1g4Y/zHBVeI=";
         };
       });
 
